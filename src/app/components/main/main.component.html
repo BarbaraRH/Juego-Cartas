@@ -1,0 +1,39 @@
+<h1 class="bg-dark text-white text-center py-4">Memoriza Cartas</h1>
+
+<div class="container">
+  <div class="text-center">
+    <button class="mt-5" type="button" (click)="pickingCards()">Comenzar</button>
+  </div>
+
+  <div class="text-center">
+    <div class="first row mt-3 mb-10">
+      <div class="col-2">
+
+      </div>
+      <div class="col-2" *ngFor="let card of row1">
+        <app-flip-card imgSrc="../../../assets/deck/{{card}}"></app-flip-card>
+      </div>
+
+
+
+      <div class="col-2">
+
+      </div>
+    </div>
+    <div class="second row mt-5">
+      <div class="col-2">
+
+      </div>
+      <div class="col-2" *ngFor="let card2 of row2">
+        <app-flip-card imgSrc="../../../assets/deck/{{card2}}"></app-flip-card>
+      </div>
+
+      <div class="col-2">
+
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

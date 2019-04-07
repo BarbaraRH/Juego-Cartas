@@ -1,0 +1,10 @@
+<label (click)="flipIt()">
+  <div id="player" class="player" [class.voted]="flipped">
+    <div class="front">
+      <img style="width: 90px" src="../../../assets/green_back.png" alt="">
+    </div>
+    <div class="back">
+      <img style="width: 90px" [src]="imgSrc" alt="">
+    </div>
+  </div>
+</label>
