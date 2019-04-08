@@ -31,7 +31,8 @@
 
       </div>
       <div class="col-2" *ngFor="let card2 of row2; let i = index">
-        <app-flip-card id="i+4" imgSrc="../../../assets/deck/{{card2}}" (click)="clickedCard(card2, i+4)">
+        <app-flip-card [hidden]="hideme[i+4].hidden" id="i+4" imgSrc="../../../assets/deck/{{card2}}"
+          (click)="clickedCard(card2, i+4)">
         </app-flip-card>
       </div>
 

@@ -43,9 +43,10 @@ export class MainComponent implements OnInit {
 
   clickedCards: any[] = [];
 
-  hideme: any = [{ i: 0, hidden: false }, { i: 1, hidden: false }, { i: 2, hidden: false }, { i: 3, hidden: false }];
-  /* isHidden: boolean = false; */
-  /* show: boolean = true; */
+  hideme: any = [
+    { i: 0, hidden: false }, { i: 1, hidden: false }, { i: 2, hidden: false }, { i: 3, hidden: false },
+    { i: 4, hidden: false }, { i: 5, hidden: false }, { i: 6, hidden: false }, { i: 7, hidden: false }
+  ];
 
   clickedCard(card: string, i: any) {
     console.log(i)
@@ -55,6 +56,7 @@ export class MainComponent implements OnInit {
       if ((this.clickedCards)[0].card === (this.clickedCards)[1].card) {
         console.log("somos iguales")
         this.hideme[i].hidden = true;
+        this.hideme[this.clickedCards[0].i].hidden = true;
         /* this.show[i] = false */
       } else {
         console.log("somos distintas")
