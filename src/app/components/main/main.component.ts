@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
     this.randomCard3, this.randomCard3, this.randomCard4, this.randomCard4
   ];
 
+  //https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random
   reOrderCards: any[] = this.pickedCards.sort(function (a, b) { return 0.5 - Math.random() });
 
   row1: any[] = this.reOrderCards.slice(0, 4);
@@ -38,6 +39,32 @@ export class MainComponent implements OnInit {
       this.pickedCards.push(this.randomCard);
     }
   } */
+
+
+  clickedCards: any[] = [];
+
+  hideme: any = [{ i: 0, hidden: false }, { i: 1, hidden: false }, { i: 2, hidden: false }, { i: 3, hidden: false }];
+  /* isHidden: boolean = false; */
+  /* show: boolean = true; */
+
+  clickedCard(card: string, i: any) {
+    console.log(i)
+    this.clickedCards.push({ i: i, card: card });
+    if (this.clickedCards.length === 2) {
+      console.log(this.clickedCards)
+      if ((this.clickedCards)[0].card === (this.clickedCards)[1].card) {
+        console.log("somos iguales")
+        this.hideme[i].hidden = true;
+        /* this.show[i] = false */
+      } else {
+        console.log("somos distintas")
+
+      }
+      this.clickedCards = [];
+    }
+  }
+
+  /* str.indexOf("welcome"); */
 
   constructor() {
 

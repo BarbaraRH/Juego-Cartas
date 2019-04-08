@@ -10,10 +10,16 @@
       <div class="col-2">
 
       </div>
-      <div class="col-2" *ngFor="let card of row1">
-        <app-flip-card imgSrc="../../../assets/deck/{{card}}"></app-flip-card>
+      <div class="col-2" *ngFor="let card of row1; let i = index">
+        <div>
+          <app-flip-card [hidden]="hideme[i].hidden" id="i" imgSrc="../../../assets/deck/{{card}}"
+            (click)="clickedCard(card, i)">
+          </app-flip-card>
+        </div>
+
       </div>
 
+      <!-- [ngStyle]="{'visibility':'visible'}" -->
 
 
       <div class="col-2">
@@ -24,8 +30,9 @@
       <div class="col-2">
 
       </div>
-      <div class="col-2" *ngFor="let card2 of row2">
-        <app-flip-card imgSrc="../../../assets/deck/{{card2}}"></app-flip-card>
+      <div class="col-2" *ngFor="let card2 of row2; let i = index">
+        <app-flip-card id="i+4" imgSrc="../../../assets/deck/{{card2}}" (click)="clickedCard(card2, i+4)">
+        </app-flip-card>
       </div>
 
       <div class="col-2">
